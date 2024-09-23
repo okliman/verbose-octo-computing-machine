@@ -26,7 +26,7 @@ jobs:
       run: docker cp latex-container:/workspace/sample.pdf sample.pdf
 
     - name: Upload the PDF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PDF
         path: sample.pdf

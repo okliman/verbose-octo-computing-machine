@@ -13,37 +13,20 @@ jobs:
     name: Build and Test Docker image
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t my-latex-project .
+    - name: Build Docker image
+      run: docker build -t my-latex-project .
 
-      - name: Run Docker image
-        run: docker run --name latex-container my-latex-project
+    - name: Run Docker image
+      run: docker run --name latex-container my-latex-project
 
-      - name: Copy result from Docker container
-        run: docker cp latex-container:/workspace/sample.pdf sample.pdf
+    - name: Copy result from Docker container
+      run: docker cp latex-container:/workspace/sample.pdf sample.pdf
 
-      - name: Commit and Push PDF to Branches
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          # Fetch all history for branches and tags
-          git fetch --all
-          
-          for branch in main cv; do
-            git checkout $branch
-            git pull
-            git add sample.pdf
-            git commit -m "Update PDF"
-            git push origin $branch
-          done
-
-      - name: Upload the PDF
-        uses: actions/upload-artifact@v4
-        with:
-          name: PDF
-          path: sample.pdf
+    - name: Upload the PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: PDF
+        path: sample.pdf

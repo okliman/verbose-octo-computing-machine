@@ -3,10 +3,10 @@ name: Docker build CI
 on:
   push:
     branches:
-      - main
+    - main
   pull_request:
     branches:
-      - main
+    - main
 
 jobs:
   docker:
@@ -28,5 +28,5 @@ jobs:
     - name: Upload the PDF
       uses: actions/upload-artifact@v2
       with:
-        name: PDF-Artifact
+        name: PDF
         path: sample.pdf

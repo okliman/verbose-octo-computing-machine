@@ -1,2 +1,2 @@
 # verbose-octo-computing-machine
-for UNI
+Ovchinnikov Vitaly Sergeevich 232

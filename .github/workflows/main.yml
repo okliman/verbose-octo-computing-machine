@@ -31,6 +31,8 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          # Fetch all history for branches and tags
+          git fetch --all
           
           for branch in main cv; do
             git checkout $branch

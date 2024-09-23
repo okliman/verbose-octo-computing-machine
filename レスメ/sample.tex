@@ -1,0 +1,250 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Vitaly Ovchinnikov}
+\tagline{My contacts}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{export-0001}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{ovitals05@gmail.com}
+  \phone{+7(993)340-20-38}
+  \linkedin{Okliman}
+  \github{Okliman}
+  \faTelegram{@okliman}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.55}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Plot Writer}{Mathema Routes}{}{Remote}
+\begin{itemize}
+\item mathroutes.ru
+\end{itemize}
+
+\cvsection{Projects}
+
+\cvevent{Neuro Manipulator}{platform - muse headband}{}{functions - moving mouse cursor based on EEG analysis}
+
+\divider
+
+\cvevent{Concentration measurement for neuromarketing}{}{}{gathering Involvement data from EEG}{measuring alpha (rhythm amplitude)/(delta rhythm amplitude) ratio during the filmwatch or gaming session, mapping to the timestamps}
+
+\medskip
+
+\cvsection{About me}
+\cvevent{My hobbies:}{}{}{}
+I am role-play game master, who thinks that creating new worlds, maps and new rules for those worlds from scratch is the most exciting part of role-play games. \\
+I love music, I can play various instruments and I am familiar with traditional music education system.\\
+\divider
+\cvevent{My dreams:}{}{}{}
+I am passionate about cutting edge technology. I remember myself being six years old and dreaming of space engineering, then automating cat-food manufacturing... But since I was thirteen, I have been dreaming of creating a deep-dive virtual reality device and, to be honest, the thing I am even more passionate about—an augmented reality neural interface.  \\
+\divider
+\cvevent{My attitude:}{}{}{}
+My position is: if there is a thing you are creating, then you should be the one to use it; or you should really care about someone who would use it. It is the only way to make a tolerable product. \\
+\divider
+\newpage
+\cvsection{Education}
+
+\cvevent{B.Sc.\ in Computer Science\&Data Science}{High School Economy university}{Sept 2023 -- June 2027}{}
+
+% \divider
+
+\switchcolumn
+
+\cvsection{My Life Philosophy}
+
+\begin{quote}
+``If creativity is not a way to success - at least it is fun''
+\end{quote}
+
+\cvsection{Achievements}
+
+\cvachievement{\faTrophy}{Eurobot Open, Russia, 3rd place}{Country stage of worldwide robotics championship}
+
+\divider
+
+\cvachievement{\faTrophy}{NTI Ncogno, Winner}{Russia-wide neurotechnological championship for school students. Team-leader.}
+
+\divider
+
+\cvachievement{\faHeartbeat}{Aikido}{1 Dan, Aibusin}
+
+\cvsection{Skills}
+\cvtag{EEG recording}
+\cvtag{EMG recording}\\
+\cvtag{Robotics}
+\cvtag{Programming microcontrollers}\\
+\cvtag{Mechanical Engineering}
+\cvtag{Bio-signal Analysis}\\
+\cvtag{Software development}
+\cvtag{Web-Development}\\
+\cvtag{Role-play game creating}
+\cvtag{Team leadership}\\
+\cvtag{Plot Writing}
+\cvtag{Storytelling}
+\cvtag{Music}\\
+\
+\divider\\
+Experienced with:\\
+\cvtag{Dassault Systems Solidworks}\\
+\cvtag{Arduino Microcontroller}\\
+\divider\\
+Programming Languages:\\
+\cvskill{Python}{5}
+\divider
+\cvskill{C++}{3}
+\divider
+\cvskill{HTML}{3} 
+\divider
+\cvskill{JavaScript}{2}
+
+
+\cvsection{Languages}
+\cvskill{Russian}{5}
+\divider
+\cvskill{English}{4}
+\divider
+\cvskill{Japanese}{1} %% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Olga Karimova}{MSU,Mathema Routes}{985481@gmail.com\\
+MSU Algebra department PostGraduate Student,\\Mathema Routes CEO\\}
+\divider
+
+\cvref{Stepan Burmistrov}{RobotX robotics school}{s@robotx.su\\
+Head of RobotX\\}
+\divider
+
+\cvref{Evgenia Panasova}{ "Snark Insights" company(Kazakhstan)}{eppanasova@gmail.com\\
+General director\\}
+\divider
+
+\cvref{Svetlana Pavlova}{URFU,Incognito(inovative center of cognitive technlogy in education)}
+{URFU - Research Associate,\\Svetlana.Zlydneva@urfu.ru \\
+Incognito - Director,\\Incognito.ural@yandex.ru\\}
+\divider
+
+\cvref{Valentin Promyslov}{FCS HSE university}
+{vpromyslov@hse.ru\\
+Academic Director of my educational program,\\Docent,\\Research Associate\\}
+\divider
+
+
+\end{paracol}
+
+
+\end{document}

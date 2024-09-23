@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Important: This allows you to checkout to any commit/branch
+          fetch-depth: 0  
 
       - name: Build Docker image
         run: docker build -t my-latex-project .

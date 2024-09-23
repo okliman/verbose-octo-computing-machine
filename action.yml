@@ -1,0 +1,32 @@
+name: Docker build CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker:
+    name: Build and Test Docker image
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t my-latex-project .
+
+    - name: Run Docker image
+      run: docker run --name latex-container my-latex-project
+
+    - name: Copy result from Docker container
+      run: docker cp latex-container:/workspace/sample.pdf sample.pdf
+
+    - name: Upload the PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDF-Artifact
+        path: sample.pdf
